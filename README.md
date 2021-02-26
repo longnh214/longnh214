@@ -1,4 +1,4 @@
-### Hi there Welcome To Visit NakNak's Github👋
+### Hi there, Welcome to visit NakNak's Github👋
 
 <div align=center>
 
