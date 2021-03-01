@@ -25,5 +25,5 @@ Here are some ideas to get you started:
 
 [![NakNak's github stats](https://github-readme-stats.vercel.app/api?username=longnh214)](https://github.com/longnh214/github-readme-stats)
 
-[![Solved.ac
-프로필](http://mazassumnida.wtf/api/generate_badge?boj=cnh0214)](https://solved.ac/cnh0214)
+<!-- [![Solved.ac
+프로필](http://mazassumnida.wtf/api/generate_badge?boj=cnh0214)](https://solved.ac/cnh0214) -->
