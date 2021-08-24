@@ -6,7 +6,7 @@
 
 </div>
 
-- 🌱 I’m currently learning Programming in ✨BoostCamp 6th✨
+- 🌱 I’m currently learning Programming in ✨boostcamp 6th webmobile membership (full stack)✨
 - 🔭 I’m currently working on IT Service Project.
 <!--
 **longnh214/longnh214** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
