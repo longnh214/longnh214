@@ -23,7 +23,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-[![NakNak's github stats](https://github-readme-stats.vercel.app/api?username=longnh214)](https://github.com/longnh214/github-readme-stats)
+[![NakNak's github stats](https://github-readme-stats.vercel.app/api?username=longnh214&show_icons=true&theme=dracula)](https://github.com/longnh214/github-readme-stats)
 
 <!-- [![Solved.ac
 프로필](http://mazassumnida.wtf/api/generate_badge?boj=cnh0214)](https://solved.ac/cnh0214) -->
