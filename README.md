@@ -8,6 +8,7 @@
 
 - 🌱 I’m currently learning Programming in ✨boostcamp 6th webmobile membership (full stack)✨
 - 🔭 I’m currently working on IT Service Project.
+- 📖 I completed the SSAFY(Samsung Software Academy For Youth) 4th course with an excellent(top 20%) SW Certificate.
 <!--
 **longnh214/longnh214** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
