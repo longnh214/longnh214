@@ -23,10 +23,10 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+<div align="center">
 
 [![NakNak's github stats](https://github-readme-stats.vercel.app/api?username=longnh214&show_icons=true&theme=dracula)](https://github.com/longnh214/github-readme-stats)
-
-<!-- [![Solved.ac
-프로필](http://mazassumnida.wtf/api/generate_badge?boj=cnh0214)](https://solved.ac/cnh0214) -->
-
+  
 [![solved.ac](http://mazassumnida.wtf/api/v2/generate_badge?boj=cnh0214)](https://solved.ac/cnh0214)
+  
+</div>
