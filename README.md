@@ -7,7 +7,7 @@
 </div>
 
 - 🌱 I’m currently learning ✨Programming.✨
-- 🔭 I’m currently working on Digital Health Care Spring Boot Project.
+- 🔭 I’m currently working on Digital Health Care Spring Boot(Spring Batch) Project.
 - 📖 I completed the SSAFY(Samsung Software Academy For Youth) 4th course with an excellent(top 20%) SW Certificate. (2020.07 ~ 2021.06)
 - 🎯 I completed the boostcamp 6th webmobile web full stack challenge course. (2021.07 ~ 2021.08)
 - 🚀 I completed the boostcamp 6th webmobile web full stack membership course. (2021.08 ~ 2021.12)
