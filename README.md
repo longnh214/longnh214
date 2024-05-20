@@ -7,7 +7,7 @@
 </div>
 
 - 🌱 I’m currently learning ✨Java Web Server Programming.✨
-- 🔭 I’m currently working on Digital Health Care Spring Boot(+ Spring Batch) Project. (2022.02 ~ )
+- 🔭 I’m worked on Digital Health Care Spring Boot(+ Spring Batch) Project. (2022.02 ~ 2024.05)
 - 📖 I completed the SSAFY(Samsung Software Academy For Youth) 4th course with an excellent(top 20%) SW Certificate. (2020.07 ~ 2021.06)
 - 🎯 I completed the naver boostcamp 6th webmobile web full stack challenge course. (2021.07 ~ 2021.08)
 - 🚀 I completed the naver boostcamp 6th webmobile web full stack membership course. (2021.08 ~ 2021.12)
