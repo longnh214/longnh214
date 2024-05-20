@@ -1,3 +1,5 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=header" />
+
 ### Hi there, Welcome to visit Nakhoon's Github👋
 
 <div align=center>
@@ -29,3 +31,7 @@ Here are some ideas to get you started:
 [![NakNak's github stats](https://github-readme-stats.vercel.app/api?username=longnh214&show_icons=true&theme=dracula)](https://github.com/longnh214/github-readme-stats)
   
 [![solved.ac](http://mazassumnida.wtf/api/v2/generate_badge?boj=cnh0214)](https://solved.ac/cnh0214)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=longnh214)](https://github.com/anuraghazra/github-readme-stats)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=footer" />
