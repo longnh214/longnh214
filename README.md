@@ -2,12 +2,6 @@
 
 ### Hi there, Welcome to visit Nakhoon's Github👋
 
-<div align=center>
-
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Flongnh214%2Fhit-counter&count_bg=%239D17CB&title_bg=%23555555&icon=apple.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-
-</div>
-
 - 🌱 I’m currently learning ✨Java Web Server Programming.✨
 - 🔭 I’m worked on Digital Health Care Spring Boot(+ Spring Batch) Project. (2022.02 ~ 2024.05)
 - 📖 I completed the SSAFY(Samsung Software Academy For Youth) 4th course with an excellent(top 20%) SW Certificate. (2020.07 ~ 2021.06)
