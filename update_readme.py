@@ -4,13 +4,9 @@ import re
 import os
 from datetime import datetime
 
-# GitHub 블로그 URL 설정 (당신의 블로그 URL로 변경하세요!)
-# 예: "https://your-username.github.io/your-blog-repo/"
-# 또는 사용자 페이지라면 "https://your-username.github.io/"
+
 BLOG_URL = "https://longnh214.github.io/"
 
-# GitHub Special Repository의 README.md 경로 (예: GitHub 프로필 README)
-# 이 스크립트는 GitHub Actions에서 실행되므로, 현재 워크스페이스의 README.md를 타겟팅합니다.
 README_PATH = "README.md"
 
 def get_latest_posts(url, num_posts=5):
@@ -27,16 +23,15 @@ def get_latest_posts(url, num_posts=5):
     soup = BeautifulSoup(response.text, 'html.parser')
 
     posts = []
-    # 각 포스트는 <article class="card-wrapper card">로 묶여 있다고 가정
-    # 이 요소를 찾아서 반복합니다.
+    
     post_cards = soup.find_all('article', class_='card-wrapper card')
 
     for card in post_cards:
-        # 1. 링크 추출: <a href="/posts/Java_String/" ...>
+        
         link_tag = card.find('a', class_='post-preview')
         link = link_tag.get('href') if link_tag else None
 
-        # 상대 경로를 절대 경로로 변환
+        
         if link and not link.startswith('http'):
             # os.path.join을 사용하여 깔끔하게 경로 조합
             # replace('\\', '/')는 Windows 환경에서 경로 구분자가 \로 나오는 것을 방지
