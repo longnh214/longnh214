@@ -3,7 +3,7 @@ name: Update Latest Blog Posts to README
 on:
   workflow_dispatch: # 수동으로 워크플로우 실행 가능하도록
   schedule:
-    - cron: '0 12 43 * *' # 매일 UTC 13시 (한국 시간 오후 10시)에 동작
+    - cron: '0 12 44 * * *' # 매일 UTC 13시 (한국 시간 오후 10시)에 동작
 
 jobs:
   update-readme:
