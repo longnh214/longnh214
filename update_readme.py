@@ -83,8 +83,8 @@ def update_readme(posts):
         print(f"ERROR: {README_PATH} 파일을 찾을 수 없습니다. GitHub Actions에서 올바른 경로를 확인하세요.")
         return
 
-    start_marker = ""
-    end_marker = ""
+    start_marker = "<div id=\"blog\">"
+    end_marker = "</div>"
 
     if start_marker not in readme_content or end_marker not in readme_content:
         print(f"ERROR: {start_marker} 또는 {end_marker} 마커를 {README_PATH}에서 찾을 수 없습니다.")
