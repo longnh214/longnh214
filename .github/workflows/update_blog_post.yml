@@ -1,0 +1,36 @@
+name: Update Latest Blog Posts to README
+
+on:
+  workflow_dispatch: # 수동으로 워크플로우 실행 가능하도록
+  schedule:
+    - cron: '0 12 43 * *' # 매일 UTC 13시 (한국 시간 오후 10시)에 동작
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x' # 최신 Python 3 버전 사용
+
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4
+
+    - name: Run update script
+      run: python update_readme.py
+
+    - name: Commit and push if changed
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git diff-index --quiet HEAD || git commit -m "Update latest blog posts on README"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
