@@ -2,12 +2,15 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 
 BLOG_URL = "https://longnh214.github.io/"
 
 README_PATH = "README.md"
+
+KST = timezone(timedelta(hours=9))
+
 
 def get_latest_posts(url, num_posts=5):
     """
@@ -15,49 +18,36 @@ def get_latest_posts(url, num_posts=5):
     """
     try:
         response = requests.get(url)
-        response.raise_for_status() # HTTP 오류 발생 시 예외 발생
+        response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"블로그 접속 오류: {e}")
         return []
 
     soup = BeautifulSoup(response.text, 'html.parser')
-
     posts = []
     
     post_cards = soup.find_all('article', class_='card-wrapper card')
 
     for card in post_cards:
-        
         link_tag = card.find('a', class_='post-preview')
         link = link_tag.get('href') if link_tag else None
 
-        
         if link and not link.startswith('http'):
-            # os.path.join을 사용하여 깔끔하게 경로 조합
-            # replace('\\', '/')는 Windows 환경에서 경로 구분자가 \로 나오는 것을 방지
             link = os.path.join(BLOG_URL, link.lstrip('/')).replace('\\', '/')
 
-        # 2. 제목 추출: <h1 class="card-title ..."> 아래의 텍스트
         title_tag = card.find('h1', class_='card-title')
         title = title_tag.get_text(strip=True) if title_tag else None
 
-        # 3. 날짜 추출: <time data-ts="..." data-df="ll"> 날짜 </time>
         date_tag = card.find('time')
         date_str = None
-        if date_tag and 'data-df' in date_tag.attrs:
-            # data-ts가 Unix timestamp (epoch time)이므로 이를 활용
+        if date_tag and 'data-ts' in date_tag.attrs:
             timestamp = int(date_tag['data-ts'])
-            # datetime 객체로 변환 후 원하는 형식으로 포매팅 (예: YYYY-MM-DD)
-            date_str = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
+            # 👉 KST로 변환하여 날짜 표시
+            date_str = datetime.fromtimestamp(timestamp, tz=KST).strftime('%Y-%m-%d')
         elif date_tag:
-            # data-ts가 없을 경우, 태그의 텍스트에서 직접 날짜 추출 시도
-            # 예: "May 14, 2025" -> 2025-05-14 (추가 파싱 로직 필요)
-            # 여기서는 data-ts가 있다고 가정하고 진행합니다.
             date_str = date_tag.get_text(strip=True)
 
-
         if title and link and date_str and link.startswith(BLOG_URL):
-            # 중복 방지를 위해 (제목, 링크, 날짜) 튜플로 저장
             if (title, link, date_str) not in posts:
                 posts.append((title, link, date_str))
         
@@ -65,6 +55,7 @@ def get_latest_posts(url, num_posts=5):
             break
             
     return posts[:num_posts]
+
 
 def update_readme(posts):
     """
@@ -75,7 +66,7 @@ def update_readme(posts):
         with open(README_PATH, 'r', encoding='utf-8') as f:
             readme_content = f.read()
     except FileNotFoundError:
-        print(f"ERROR: {README_PATH} 파일을 찾을 수 없습니다. GitHub Actions에서 올바른 경로를 확인하세요.")
+        print(f"ERROR: {README_PATH} 파일을 찾을 수 없습니다.")
         return
 
     start_marker = "---"
@@ -86,11 +77,9 @@ def update_readme(posts):
         print("README.md에 마커를 추가해주세요.")
         return
 
-    new_posts_content = []
-    # 제목 [날짜] 형태로 표시
-    for title, link, date_str in posts:
-        new_posts_content.append(f"- [{title}]({link}) [{date_str}]") # <-- 날짜 추가
-    
+    new_posts_content = [
+        f"- [{title}]({link}) [{date_str}]" for title, link, date_str in posts
+    ]
     new_posts_text = "\n".join(new_posts_content)
 
     updated_readme = re.sub(
@@ -101,7 +90,7 @@ def update_readme(posts):
     )
 
     if updated_readme == readme_content:
-        print("README.md 내용에 변경 사항이 없습니다. 업데이트 건너뜝니다.")
+        print("README.md 내용에 변경 사항이 없습니다. 업데이트 건너뜁니다.")
         return
 
     with open(README_PATH, 'w', encoding='utf-8') as f:
@@ -112,7 +101,7 @@ def update_readme(posts):
 if __name__ == "__main__":
     print("최신 블로그 포스트 가져오기 시작...")
     latest_posts = get_latest_posts(BLOG_URL, num_posts=5)
-    
+
     if latest_posts:
         print("최신 포스트:", latest_posts)
         update_readme(latest_posts)
